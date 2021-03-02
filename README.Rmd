@@ -44,3 +44,38 @@ by Allison Horst
     - A map! in `ggplot2`
 - Export & save your graphs
 - Keep learning
+
+### Workshop prep: 
+
+There are two ways you can get the workshop materials: 
+
+1. Create a free [RStudio Cloud](https://rstudio.cloud) account, and access the materials here: https://rstudio.cloud/project/2256278. **If you use this option, make sure to click "Make permanent copy" or your work will be deleted when you close the project.**
+
+2. Fork & clone this repo to work locally. 
+
+## Required packages: 
+
+Make sure you have recent versions of the following packages installed for the workshop: 
+
+# General use packages:
+
+- `tidyverse`
+- `here`
+- `janitor`
+
+# Specifically for plots:
+
+- `patchwork`
+- `ggrepel`
+- `gghighlight`
+- `paletteer`
+- `ggExtra`
+- `ggbeeswarm`
+
+# Spatial data simplified:
+
+- `sf`
+
+# And for another dataset we'll explore:
+
+- `gapminder`
