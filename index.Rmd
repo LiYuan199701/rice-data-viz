@@ -828,6 +828,12 @@ ggsave(filename = "my_awesome_map.png", width = 6, height = 4)
 
 Here are some of my favorite resources for building advanced data visualization tools in `ggplot2`, learning about new types of graphs, and choosing an appropriate graph type: 
 
+## Books
+
+- Claus Wilke's [*Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/index.html)
+
+- Kieran Healy's [*Data Visualization*](https://kieranhealy.org/publications/dataviz/)
+
 ## `ggplot2` tutorials and examples
 
 - [Cedric Scherer](https://twitter.com/CedScherer)'s ["A `ggplot2` tutorial for beautiful plotting in R"](https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/#legends)
