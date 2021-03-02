@@ -10,6 +10,10 @@ by Allison Horst
 <!-- badges: start -->
 <!-- badges: end -->
 
+### Workshop guide
+
+Available here: <https://allisonhorst.github.io/rice-data-viz/>
+
 ### Workshop outline
 
 -   Conceptual hierarchy of data viz
