@@ -50,18 +50,18 @@ There are two ways you can get the workshop materials:
 
 2.  Fork & clone this repo to work locally.
 
-## Required packages:
+### Required packages:
 
 Make sure you have recent versions of the following packages installed
 for the workshop:
 
-# General use packages:
+#### General use packages:
 
 -   `tidyverse`
 -   `here`
 -   `janitor`
 
-# Specifically for plots:
+#### Specifically for plots:
 
 -   `patchwork`
 -   `ggrepel`
@@ -70,10 +70,10 @@ for the workshop:
 -   `ggExtra`
 -   `ggbeeswarm`
 
-# Spatial data simplified:
+#### Spatial data simplified:
 
 -   `sf`
 
-# And for another dataset we’ll explore:
+#### And for another dataset we’ll explore:
 
 -   `gapminder`
