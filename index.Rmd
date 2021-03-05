@@ -384,7 +384,7 @@ ggplot(data = lizards, aes(y = fct_infreq(common_name))) +
 
 The [`scales`](https://scales.r-lib.org/index.html) package in R is truly an unsung hero of finalizing `ggplot` graphs. To hear more, I strongly recommend watching Dana Seidel's 20 minute talk on [*The little package that could: Taking visualizations to the next level with the scales package*](https://rstudio.com/resources/rstudioconf-2020/the-little-package-that-could-taking-visualizations-to-the-next-level-with-the-scales-package/) from rstudio::conf(2020). 
 
-Why does that matter to us? *Because a whole lot of the subtle things that make a graph way better are updating using the `scale_` suite of functions.* 
+Why does that matter to us? *Because a whole lot of the subtle things that make a graph way better are updating using the scales suite of helpful functions.* 
 
 For a complete list of scales functions & usage, see: https://scales.r-lib.org/index.html
 
@@ -484,6 +484,7 @@ ggplot(data = lizards, aes(x = total_length, y = weight)) +
   scale_color_steps(low = "red", high = "black")
 
 # Notice the binned legend - within bins all points are the same value. 
+# Use n.breaks =  or breaks = c() to manually set the break number or value.
 ```
 
 You can create a divergent binned scheme with `scale_*_steps2()`:
@@ -492,9 +493,11 @@ You can create a divergent binned scheme with `scale_*_steps2()`:
 ```{r}
 ggplot(data = lizards, aes(x = total_length, y = weight)) +
   geom_point(aes(color = total_length)) +
-  scale_color_steps2(low = "black",
+  scale_color_steps2(low = "green",
+                     mid = "black",
                      high = "red",
-                     midpoint = 150)
+                     midpoint = 150,
+                     breaks = c(50, 75, 150, 180, 220, 280))
 ```
 
 Or, to make your own bins, try `scale_*_stepsn()`:
@@ -502,7 +505,8 @@ Or, to make your own bins, try `scale_*_stepsn()`:
 ```{r}
 ggplot(data = lizards, aes(x = total_length, y = weight)) +
   geom_point(aes(color = weight)) +
-  scale_color_stepsn(colors = c("orange","red","purple"))
+  scale_color_stepsn(colors = c("orange","red","purple"),
+                     breaks = seq(from = 10, to = 60, by = 10))
 ```
 
 What if we have a discrete variable? Let's make a boxplot of lizard lengths by species, then customize the fill color with a palette in `paletteer`: 
