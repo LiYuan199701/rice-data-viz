@@ -352,10 +352,9 @@ ggplot(data = lizard_counts, aes(y = fct_reorder(common_name, n), x = n)) +
 
 ```{r}
 ggplot(data = lizards, aes(x = total_length, y = weight)) +
-  geom_point(aes(color = common_name), 
+  geom_point(aes(color = common_name, shape = common_name), 
              fill = "black",
-             size = 2, 
-             shape = 21) +
+             size = 2) +
   theme_minimal() +
   labs(x = "Total length (mm)",
        y = "Weight (g)",
@@ -547,7 +546,6 @@ ggplot(data = lizard_n, aes(y = common_name, x = n)) +
   theme(axis.title.y = element_text(angle = 0, vjust = 0.5))
 ```
 
-        
 ## In the weeds of themes (gridlines, panel colors)
 
 Ask yourself: do you need those gridlines? Only if your audience needs to know whether values are above or below meaningful values - which can be useful, but oftentimes gridlines are really overused and make an entire plot feel more cluttered. 
@@ -654,6 +652,25 @@ ggplot(data = mono, aes(x = year, y = lake_level)) +
   
 ```
 
+### Aside: better legends
+
+```{r}
+two_lizards <- lizards %>% 
+  filter(common_name %in% c("eastern fence", "western whiptail"))
+
+ggplot(data = two_lizards, aes(x = total_length, y = weight)) +
+  geom_point(aes(color = common_name,
+                 shape = common_name),
+             size = 2) +
+  scale_color_manual(name = "Lizard species:",
+                       values = c("orange", "navy"),
+                     labels = c("Eastern fence lizard", "Western whiptail")) +
+  scale_shape_discrete(name = "Lizard species:",
+                       labels = c("Eastern fence lizard", "Western whiptail")) +
+  theme_minimal() +
+  theme(legend.position = c(0.2, 0.8),
+        legend.background = element_blank()) # And check out other legend.* options...it's a lot.
+```
 
 ## Repulsive labels (e.g. `ggrepel`)
 
